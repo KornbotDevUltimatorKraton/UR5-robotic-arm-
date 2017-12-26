@@ -1,0 +1,785 @@
+<robot
+  name="UR5_Robotic_Arm">
+  <link
+    name="Base_link">
+    <inertial>
+      <origin
+        xyz="-0.270887268142801 -0.0738972155324684 -0.172493234263436"
+        rpy="0 0 0" />
+      <mass
+        value="0.379348135746581" />
+      <inertia
+        ixx="2.39604793679125E-17"
+        ixy="-6.49886930386399E-13"
+        ixz="-9.96658512188979E-12"
+        iyy="4.1633212125265E-06"
+        iyz="-1.55576595719987E-18"
+        izz="4.16332121250274E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.956862745098039 0.956862745098039 0.956862745098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="BaseRotation_Link">
+    <inertial>
+      <origin
+        xyz="-0.0022564 0.095116 5.86E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.80837" />
+      <inertia
+        ixx="0.0022087"
+        ixy="6.6229E-05"
+        ixz="1.2101E-06"
+        iyy="0.00031884"
+        iyz="-1.6062E-06"
+        izz="0.00196" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/BaseRotation_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/BaseRotation_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BaseRotation"
+    type="planar">
+    <origin
+      xyz="-0.2676 0.17247 -0.073961"
+      rpy="-4.183E-15 1.2326 -1.5708" />
+    <parent
+      link="Base_link" />
+    <child
+      link="BaseRotation_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Uppershoulder_Link">
+    <inertial>
+      <origin
+        xyz="-0.000773668916831505 0.072240239397513 0.127941177085796"
+        rpy="0 0 0" />
+      <mass
+        value="0.899469606096532" />
+      <inertia
+        ixx="0.0139331228501756"
+        ixy="1.38557324481365E-05"
+        ixz="4.74364368519462E-05"
+        iyy="0.013083259216085"
+        iyz="-0.00287375425252585"
+        izz="0.000850315532979655" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Uppershoulder_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Uppershoulder_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Uppershoulder"
+    type="planar">
+    <origin
+      xyz="-0.046297 0.11825 0.0032692"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="BaseRotation_Link" />
+    <child
+      link="Uppershoulder_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Elbow_Link">
+    <inertial>
+      <origin
+        xyz="0.0185167261391812 9.40691277243055E-05 -0.143963286359526"
+        rpy="0 0 0" />
+      <mass
+        value="0.558778162540114" />
+      <inertia
+        ixx="0.012182017775996"
+        ixy="-7.0049509001882E-07"
+        ixz="0.000868458745743704"
+        iyy="0.0122887079154552"
+        iyz="7.10406869114521E-06"
+        izz="0.000106700136891623" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Elbow_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Elbow_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Elbow"
+    type="planar">
+    <origin
+      xyz="-0.097984 -0.049285 0.30646"
+      rpy="1.5708 -1.115E-15 1.5708" />
+    <parent
+      link="Uppershoulder_Link" />
+    <child
+      link="Elbow_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="WristRotation_Link">
+    <inertial>
+      <origin
+        xyz="0.031949 0.00019077 -0.023901"
+        rpy="0 0 0" />
+      <mass
+        value="0.27507" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/WristRotation_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/WristRotation_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="WristRotation"
+    type="planar">
+    <origin
+      xyz="-0.082941 0.00051143 -0.28587"
+      rpy="1.5708 -1.079E-15 1.5708" />
+    <parent
+      link="Elbow_Link" />
+    <child
+      link="WristRotation_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Wristmovefinger_Link">
+    <inertial>
+      <origin
+        xyz="-0.000227501743169684 0.00978404672138886 -0.00344653170040773"
+        rpy="0 0 0" />
+      <mass
+        value="0.239061263037987" />
+      <inertia
+        ixx="2.12041012340326E-05"
+        ixy="4.63662427489203E-07"
+        ixz="-1.80175798698507E-07"
+        iyy="2.74146174906429E-06"
+        iyz="7.02424180300697E-06"
+        izz="1.84864258951012E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Wristmovefinger_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.956862745098039 0.956862745098039 0.956862745098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Wristmovefinger_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wristmovefinger"
+    type="planar">
+    <origin
+      xyz="-0.055941 0.00051143 -0.028875"
+      rpy="0 0.44305 1.5708" />
+    <parent
+      link="WristRotation_Link" />
+    <child
+      link="Wristmovefinger_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Finger1_Link">
+    <inertial>
+      <origin
+        xyz="-0.00669539945488903 0.024813356120548 0.0210627017857942"
+        rpy="0 0 0" />
+      <mass
+        value="0.0462480591832373" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Finger1"
+    type="planar">
+    <origin
+      xyz="-0.021323 0.0037394 -0.00925"
+      rpy="-1.5708 9.992E-16 1.3805E-30" />
+    <parent
+      link="Wristmovefinger_Link" />
+    <child
+      link="Finger1_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Finger1U_Link">
+    <inertial>
+      <origin
+        xyz="0.00809681310403898 0.0175281753738267 0.0069975357483687"
+        rpy="0 0 0" />
+      <mass
+        value="0.0236125519009478" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger1U_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger1U_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Finger1U"
+    type="planar">
+    <origin
+      xyz="-0.0097424 0.032161 0.044"
+      rpy="1.5708 1.3878E-15 1.5708" />
+    <parent
+      link="Finger1_Link" />
+    <child
+      link="Finger1U_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Finger1E_Link">
+    <inertial>
+      <origin
+        xyz="0.00569746752193723 0.0253173418260016 0.00749667553332828"
+        rpy="0 0 0" />
+      <mass
+        value="0.0203702073457965" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger1E_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger1E_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Einger1E"
+    type="planar">
+    <origin
+      xyz="0.013499 0.046894 0.014674"
+      rpy="-3.1416 3.1641E-15 3.124" />
+    <parent
+      link="Finger1U_Link" />
+    <child
+      link="Finger1E_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Finger2_Link">
+    <inertial>
+      <origin
+        xyz="-0.00669539945488905 0.024813356120548 0.0210627017857942"
+        rpy="0 0 0" />
+      <mass
+        value="0.0462480591832373" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Finger2"
+    type="planar">
+    <origin
+      xyz="0.044079 -0.090108 -0.051068"
+      rpy="1.5532 1.5708 0" />
+    <parent
+      link="Finger1E_Link" />
+    <child
+      link="Finger2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Finger2U_Link">
+    <inertial>
+      <origin
+        xyz="0.00809681590775475 0.0175281726033557 0.00699753568724798"
+        rpy="0 0 0" />
+      <mass
+        value="0.0236125465097113" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger2U_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger2U_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Finger2U"
+    type="planar">
+    <origin
+      xyz="-0.0097424 0.026484 0.032237"
+      rpy="1.5708 -0.86879 1.5708" />
+    <parent
+      link="Finger2_Link" />
+    <child
+      link="Finger2U_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Finger2E_Link">
+    <inertial>
+      <origin
+        xyz="0.00569748492363509 0.0253173343014481 0.00749668168642401"
+        rpy="0 0 0" />
+      <mass
+        value="0.0203701535802087" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger2E_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger2E_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Finger2E"
+    type="planar">
+    <origin
+      xyz="0.0076058 0.052999 0.017174"
+      rpy="3.1416 -1.1102E-15 -1.5884" />
+    <parent
+      link="Finger2U_Link" />
+    <child
+      link="Finger2E_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Finger3_Link">
+    <inertial>
+      <origin
+        xyz="0.0345349331112283 0.0710979658113745 0.0187353340144203"
+        rpy="0 0 0" />
+      <mass
+        value="0.0462480591832372" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Finger3"
+    type="planar">
+    <origin
+      xyz="0.054455 0.04837 0.0074317"
+      rpy="2.2904 -1.5708 0" />
+    <parent
+      link="Finger2E_Link" />
+    <child
+      link="Finger3_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Finger3U_Link">
+    <inertial>
+      <origin
+        xyz="0.008096815498209 0.0175281723880535 0.00699753578973197"
+        rpy="0 0 0" />
+      <mass
+        value="0.0236125476154434" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger3U_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger3U_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Finger3U"
+    type="planar">
+    <origin
+      xyz="0.030238 0.10028 0.039511"
+      rpy="2.1073E-08 1.5708 0" />
+    <parent
+      link="Finger3_Link" />
+    <child
+      link="Finger3U_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Finger3E_Link">
+    <inertial>
+      <origin
+        xyz="0.00569746752193724 0.0253173418260016 0.00749667553332833"
+        rpy="0 0 0" />
+      <mass
+        value="0.0203702073457965" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger3E_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://UR5_Robotic_Arm/meshes/Finger3E_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Finger3E"
+    type="planar">
+    <origin
+      xyz="0.0072058 0.053399 0.014674"
+      rpy="-3.1416 -5.5511E-16 -1.5884" />
+    <parent
+      link="Finger3U_Link" />
+    <child
+      link="Finger3E_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
